@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RepTimer</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="container">
+    <h1>RepTimer</h1>
+    <h3>Fitness Routine Checklist</h3>
+    <p class="description">Track your exercises with their individual timers. Start, pause or reset each one, and check when done.</p>
+
+    <div id="dailyProgress" aria-live="polite" aria-atomic="true">Today's Progress: 0 / 0 completed</div>
+
+    <form id="addExerciseForm" aria-label="Add new exercise">
+      <input type="text" id="exerciseNameInput" placeholder="Exercise Name" required aria-required="true" aria-label="Exercise name" autocomplete="off" />
+      <input type="number" id="exerciseDurationInput" placeholder="Duration (sec)" min="5" max="600" value="30" required aria-required="true" aria-label="Exercise duration in seconds" />
+      <button type="submit" aria-label="Add exercise">Add</button>
+    </form>
+
+    <ul class="exercise-list" id="exerciseList" ></ul>
+  </div>
+  <script src="script.js"></script>
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: #CDE6F5;
+    color: #554640;
+
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    max-width: 640px;
+    width: 100%;
+    height: 100vh;
+    box-shadow: 0 0 20px rgba(85, 70, 64, 0.15);
+    display: flex;
+    flex-direction: column;
+
+  }
+  h1{
+    text-align: center;
+    color:#8DA7BE;
+    font-size: 2.5rem;
+  }
+  h3 {
+    margin: 0 0 0.25rem 0;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+    color: #554640;
+    font-weight: 600;
+  }
+
+  p.description{
+    
+    font-weight: 300;
+    color: #87919E;
+    margin: 0 0 1.8rem 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  #dailyProgress {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #707078;
+    margin-bottom: 1.8rem;
+    user-select: none;
+
+
+  }
+
+  form#addExerciseForm {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1.8rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  form#addExerciseForm input[type="text"],
+  form#addExerciseForm input[type="number"]{
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: 1.5px solid #8DA7BE;
+    font-size: 1rem;
+    font-weight: 400;
+    outline: none;
+    flex-grow: 1;
+    max-width: 250px;
+    transition: border-color 0.3s;
+    color: #554640;
+    background: #fff;
+
+  }
+
+  form#addExerciseForm input[type="text"]::placeholder,
+
+  form#addExerciseForm input[type="number"]::placeholder{
+    color: #87919E;
+  }
+  form#addExerciseForm input[type="text"]:focus,
+
+  form#addExerciseForm input[type="number"]:focus{
+    border-color: #707078;
+  }
+
+  form#addExerciseForm input[type="number"] {
+    max-width: 110px;
+
+  }
+
+  form#addExerciseForm button{
+    flex-grow: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    background: #8DA7BE;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+  }
+
+  form#addExerciseForm button:hover{
+    background: #707078;
+  }
+
+  ul.exercise-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 220px);
+    scrollbar-width: thin;
+    scrollbar-color: #8DA7BE transparent;
+  }
+
+  ul.exercise-list::-webkit-scrollbar {
+    width: 6px;
+  }
+  ul.exercise-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+
+  ul.exercise-list::-webkit-scrollbar-thumb {
+    background-color: #8DA7BE;
+    border-radius: 10px;
+    border: 2px solid transparent;
+  }
+
+  li.exercise{
+    border-bottom: 1px solid #8DA7BE;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+
+  }
+
+  .top-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.45rem;
+  }
+
+  label.exercise-name {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.15rem;
+    cursor: pointer;
+    white-space: nowrap;
+    color: #554640;
+  }
+
+  label.exercise-name input[type="checkbox"]{
+    margin-right: 1rem;
+    width: 20px;
+    height: 20px;
+    accent-color: #707078;
+    cursor: pointer;
+  }
+
+  .timer{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.15rem;
+    font-weight: 700;
+    background: #F9FCFF;
+    padding: 0.2rem 0.8rem;
+    border-radius: 8px;
+    min-width: 75px;
+    text-align: center;
+    color: #87919E;
+    user-select: none;
+    border: 1px solid #8DA7BE;
+
+  }
+
+  .controls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  button.control-btn{
+    flex: none;
+    padding: 0.4rem 0.9rem;
+    border: 1.5px solid #707078;
+    border-radius: 8px;
+    background: transparent;
+    color: #707078;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  button.control-btn:hover:not(:disabled) {
+    background-color: #707078;
+    color: #fff;
+    border-color: #707078;
+  }
+
+  button.control-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  button.remove-btn {
+    border-color: #8DA7BE;
+    color: #8DA7BE;
+  }
+
+  button.remove-btn:hover {
+    background-color: #8DA7BE;
+    color: #fff;
+    border-color: #8DA7BE;
+  }
+
+  li.exercise.completed label.exercise-name{
+    color: #87919E;
+    text-decoration: line-through;
+  }
+
+  @media(max-width: 720px){
+    .container {
+      max-width: 100%;
+      padding: 1.5rem 1.5rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+    }
+    form#addExerciseForm input[type="text"], form#addExerciseForm input[type="number"]{
+      max-width: 100%;
+    }
+    form#addExerciseForm {
+      gap: 0.5rem;
+      
+    }
+    ul.exercise-list{
+      max-height: calc(100vh - 180px);
+    }
+  }
